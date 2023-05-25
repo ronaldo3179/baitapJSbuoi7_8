@@ -183,26 +183,28 @@ function demSoNguyen() {
     document.getElementById('demCacSoNguyen').innerHTML = demSoN;
 }
 // <!-- Bài 10: So sánh số lượng số âm và số dương -->
-document.getElementById("soSanhAmDuong").onclick = function () {
-   
-    var hamDemSoDuong = demSoDuong(arr1);
-    var hamDemSoAm = demSoAm(arr1);
-  
-    if (hamDemSoDuong == hamDemSoAm) {
-      document.getElementById("ketQuaSoSanh").innerHTML = "số âm = số dương";
-    } else if (hamDemSoDuong > hamDemSoAm) {
-      document.getElementById("ketQuaSoSanh").innerHTML = "số âm < số dương";
-    } else if (hamDemSoDuong < hamDemSoAm) {
-      document.getElementById("ketQuaSoSanh").innerHTML = "số âm > số dương";
-    }
-  };
-  function demSoAm(arr) {
+function soSanhAmDuong() {
+    var demDuong = 0;
+    arr1.forEach(function (item) {
+        if (item > 0) {
+            demDuong++;
+        }
+    });
+    // console.log(demDuong);
+    var demAm = 0;
+    arr1.forEach(function (item) {
+        if (item < 0) {
+            demAm++;
+        }
+    });
+    // console.log(demAm);
 
-    var dem = 0;
-    for (var i = 0; i < arr.length; i++) {
-      if (arr[i] < 0) {
-        dem++;
-      }
+    if (demDuong > demAm) {
+        document.getElementById('ketQuaSoL').innerHTML = "Số dương > Số âm"
+    } else if (demDuong < demAm) {
+        document.getElementById('ketQuaSoL').innerHTML = "Số dương < Số âm"
+    } else if (demDuong = demAm) {
+        document.getElementById('ketQuaSoL').innerHTML = "Số dương = Số âm"
     }
-    return dem;
-  }
+
+}
