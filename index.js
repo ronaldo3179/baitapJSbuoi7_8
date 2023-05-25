@@ -190,14 +190,14 @@ function soSanhAmDuong() {
             demDuong++;
         }
     });
-    // console.log(demDuong);
+
     var demAm = 0;
     arr1.forEach(function (item) {
         if (item < 0) {
             demAm++;
         }
     });
-    // console.log(demAm);
+   
 
     if (demDuong > demAm) {
         document.getElementById('ketQuaSoL').innerHTML = "Số dương > Số âm"
